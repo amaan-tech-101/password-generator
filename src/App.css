@@ -1,0 +1,281 @@
+/* App Container */
+.app {
+  min-height: 100vh;
+  background: var(--neu-bg);
+  transition: background 0.4s ease;
+}
+
+/* Main Container */
+.container {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+/* Header with entrance animation */
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.logo {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: float 3s ease-in-out infinite;
+  display: inline-block;
+}
+
+.header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.02em;
+  animation: fadeInUp 0.6s ease-out 0.1s both;
+  transition: color 0.4s ease;
+}
+
+.header p {
+  color: var(--text-secondary);
+  margin: 0;
+  font-size: 0.95rem;
+  animation: fadeInUp 0.6s ease-out 0.2s both;
+  transition: color 0.4s ease;
+}
+
+/* Generator Card - Neumorphic with entrance */
+.generator-card {
+  background: var(--neu-bg);
+  border-radius: 24px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  box-shadow: var(--neu-shadow-raised);
+  margin-bottom: 2rem;
+  animation: fadeInScale 0.5s ease-out 0.3s both;
+  transition: all 0.4s ease;
+}
+
+.generator-card:hover {
+  box-shadow: 
+    14px 14px 28px var(--neu-dark),
+    -14px -14px 28px var(--neu-light);
+}
+
+.divider {
+  height: 2px;
+  background: var(--neu-bg);
+  border-radius: 1px;
+  box-shadow: var(--neu-shadow-inset);
+  transition: all 0.4s ease;
+}
+
+/* Generate Button - Neumorphic with crazy hover */
+.generate-btn {
+  background: var(--neu-bg);
+  border: none;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1.25rem 2rem;
+  border-radius: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--neu-shadow-small);
+  position: relative;
+  overflow: hidden;
+}
+
+.generate-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.generate-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.generate-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: var(--neu-shadow-raised);
+}
+
+.generate-btn:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: var(--neu-shadow-inset);
+}
+
+.btn-icon {
+  font-size: 1.25rem;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.generate-btn:hover .btn-icon {
+  animation: wiggle 0.5s ease infinite;
+}
+
+.generate-btn:active .btn-icon {
+  animation: spin 0.3s ease;
+}
+
+/* Disabled state when no options selected */
+.generate-btn.disabled,
+.generate-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.generate-btn.disabled:hover,
+.generate-btn:disabled:hover {
+  transform: none;
+  box-shadow: var(--neu-shadow-small);
+}
+
+.generate-btn.disabled:hover::before,
+.generate-btn:disabled:hover::before {
+  width: 0;
+  height: 0;
+}
+
+.generate-btn.disabled:hover .btn-icon,
+.generate-btn:disabled:hover .btn-icon {
+  animation: none;
+}
+
+/* Animations */
+@keyframes slideUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes iconPop {
+  0% { transform: scale(0.5) rotate(-30deg); opacity: 0; }
+  60% { transform: scale(1.1) rotate(10deg); }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+.mode-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  animation: slideUpFade 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.icon-main {
+  animation: iconPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Footer with entrance */
+.footer {
+  text-align: center;
+  margin-top: 2rem;
+  animation: fadeInUp 0.6s ease-out 0.5s both;
+}
+
+.footer p {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin: 0;
+  transition: color 0.4s ease;
+}
+
+.author-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  border-bottom: 1px dotted var(--text-muted);
+}
+
+.author-link:hover {
+  color: var(--text-secondary);
+  border-bottom-style: solid;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+  
+  .header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .generator-card {
+    padding: 1.5rem;
+    border-radius: 20px;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+    padding: 1.5rem 0.75rem;
+    max-width: 100%;
+  }
+
+  .header {
+    margin-bottom: 2rem;
+  }
+
+  .logo {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .header h1 {
+    font-size: 1.35rem;
+  }
+
+  .header p {
+    font-size: 0.85rem;
+    padding: 0 1rem;
+  }
+
+  .generator-card {
+    padding: 1.25rem 1rem;
+    border-radius: 16px;
+    gap: 1.25rem;
+  }
+  
+  .length-value {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.85rem;
+  }
+  
+  .generate-btn {
+    padding: 1rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-top: 4rem;
+  }
+}

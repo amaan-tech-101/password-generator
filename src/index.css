@@ -1,0 +1,209 @@
+/* CSS Reset & Base Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #e4e4e7;
+  color: #27272a;
+  line-height: 1.6;
+  min-height: 100vh;
+  font-weight: 400;
+}
+
+/* Import Google Font - Outfit (clean & minimal) + Space Mono */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap");
+
+/* Selection */
+::selection {
+  background: rgba(0, 0, 0, 0.15);
+  color: #18181b;
+}
+
+/* Scrollbar - Hidden but scrollable */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* IE and Edge */
+body {
+  -ms-overflow-style: none;
+}
+
+/* Focus visible */
+:focus-visible {
+  outline: 2px solid #71717a;
+  outline-offset: 2px;
+}
+
+/* Neumorphism base shadows - Light Theme (default) */
+:root {
+  --neu-bg: #e4e4e7;
+  --neu-light: #ffffff;
+  --neu-dark: #bebec2;
+  --neu-shadow-raised: 8px 8px 16px #bebec2, -8px -8px 16px #ffffff;
+  --neu-shadow-inset: inset 4px 4px 8px #bebec2, inset -4px -4px 8px #ffffff;
+  --neu-shadow-small: 4px 4px 8px #bebec2, -4px -4px 8px #ffffff;
+  --text-primary: #18181b;
+  --text-secondary: #52525b;
+  --text-muted: #71717a;
+  --checkbox-active: #52525b;
+}
+
+/* Dark Theme */
+.dark-theme {
+  --neu-bg: #1e1e24;
+  --neu-light: #2a2a32;
+  --neu-dark: #141418;
+  --neu-shadow-raised: 8px 8px 16px #141418, -8px -8px 16px #2a2a32;
+  --neu-shadow-inset: inset 4px 4px 8px #141418, inset -4px -4px 8px #2a2a32;
+  --neu-shadow-small: 4px 4px 8px #141418, -4px -4px 8px #2a2a32;
+  --text-primary: #f4f4f5;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  --checkbox-active: #a1a1aa;
+}
+
+/* Apply theme colors to body */
+body {
+  background: var(--neu-bg);
+  color: var(--text-primary);
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* ============================================
+   CRAZY ANIMATIONS
+   ============================================ */
+
+/* Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+  20%, 40%, 60%, 80% { transform: translateX(4px); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 
+      6px 6px 12px #bebec2,
+      -6px -6px 12px #ffffff;
+  }
+  50% {
+    box-shadow: 
+      8px 8px 20px #bebec2,
+      -8px -8px 20px #ffffff,
+      0 0 20px rgba(0, 0, 0, 0.05);
+  }
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+
+/* Stagger animation delays */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
