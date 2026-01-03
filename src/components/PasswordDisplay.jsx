@@ -62,6 +62,7 @@ function PasswordDisplay({ password, onCopy, mode }) {
           className="toggle-btn"
           onClick={() => setShowPassword(!showPassword)}
           title={showPassword ? "Hide password" : "Show password"}
+          aria-label={showPassword ? "Hide password" : "Show password"}
         >
           {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
         </button>
@@ -71,6 +72,7 @@ function PasswordDisplay({ password, onCopy, mode }) {
         className={`copy-btn ${copied ? "copied" : ""}`}
         onClick={handleCopyPassword}
         disabled={!password}
+        aria-label={getCopyText()}
       >
         <span className="copy-icon">
           {copied ? <Check size={18} /> : <Copy size={18} />}

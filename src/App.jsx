@@ -8,6 +8,7 @@ import ModeTabs from "./components/ModeTabs";
 import ThemeToggle from "./components/ThemeToggle";
 import History from "./components/History";
 import ParticlesBackground from "./components/ParticlesBackground";
+import SEOContent from "./components/SEOContent";
 import { generatePassword } from "./utils/generatePassword";
 import { generateMemorablePassword } from "./utils/generateMemorable";
 import { checkStrength } from "./utils/checkStrength";
@@ -204,7 +205,7 @@ function App() {
   return (
     <div className="app">
       <ParticlesBackground isDark={isDark} />
-      <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} />
+      {/* <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} /> */}
 
       <main className="container">
         <header className="header">
@@ -263,6 +264,8 @@ function App() {
           onSelect={handleSelectFromHistory}
           onClear={handleClearHistory}
         />
+
+        <SEOContent />
 
         <footer className="footer">
           <p>

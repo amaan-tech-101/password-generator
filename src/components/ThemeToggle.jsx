@@ -6,6 +6,8 @@ function ThemeToggle({ isDark, onToggle }) {
     <button
       className="theme-toggle"
       onClick={onToggle}
+      disabled
+      style={{ opacity: 0.5, pointerEvents: "none", cursor: "default" }}
       title={isDark ? "Switch to light mode" : "Switch to dark mode"}
     >
       <span className={`toggle-track ${isDark ? "dark" : "light"}`}>

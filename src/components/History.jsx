@@ -22,7 +22,7 @@ function History({ passwords, onSelect, onClear }) {
   return (
     <div className="history">
       <div className="history-header">
-        <h3>📜 Recent Passwords</h3>
+        <h2>📜 Recent Passwords</h2>
         <button className="clear-btn" onClick={onClear}>
           Clear All
         </button>

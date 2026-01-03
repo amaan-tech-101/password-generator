@@ -1,5 +1,27 @@
+/**
+ * @fileoverview Options panel component for password generation settings.
+ * Renders different options based on the active generation mode.
+ */
+
+import {
+  WORD_COUNT_PRESETS,
+  SEPARATOR_OPTIONS,
+  PIN_LENGTH_PRESETS,
+  PASSWORD_LENGTH,
+} from "../constants";
 import "./Options.css";
 
+/**
+ * Renders mode-specific options for password generation.
+ * @param {Object} props
+ * @param {string} props.mode - Current generation mode.
+ * @param {Object} props.randomOptions - Random password options.
+ * @param {function} props.onRandomChange - Handler for random option changes.
+ * @param {Object} props.memorableOptions - Memorable password options.
+ * @param {function} props.onMemorableChange - Handler for memorable option changes.
+ * @param {Object} props.pinOptions - PIN options.
+ * @param {function} props.onPinChange - Handler for PIN option changes.
+ */
 function Options({
   mode,
   randomOptions,
@@ -48,8 +70,8 @@ function Options({
           <input
             type="range"
             id="length"
-            min="8"
-            max="50"
+            min={PASSWORD_LENGTH.MIN}
+            max={PASSWORD_LENGTH.MAX}
             value={randomOptions.length}
             onChange={handleLengthChange}
             className="length-slider"
@@ -126,7 +148,7 @@ function Options({
             <label>Number of Words</label>
           </div>
           <div className="preset-buttons">
-            {[2, 3, 4, 5].map((count) => (
+            {WORD_COUNT_PRESETS.map((count) => (
               <button
                 key={count}
                 className={`preset-btn ${
@@ -145,12 +167,7 @@ function Options({
             <label>Separator</label>
           </div>
           <div className="preset-buttons">
-            {[
-              { value: "-", label: "Dash -" },
-              { value: "_", label: "Under _" },
-              { value: ".", label: "Dot ." },
-              { value: "", label: "None" },
-            ].map((sep) => (
+            {SEPARATOR_OPTIONS.map((sep) => (
               <button
                 key={sep.value}
                 className={`preset-btn ${
@@ -198,7 +215,7 @@ function Options({
             <label>PIN Length</label>
           </div>
           <div className="preset-buttons pin-presets">
-            {[4, 6, 8, 10, 12].map((length) => (
+            {PIN_LENGTH_PRESETS.map((length) => (
               <button
                 key={length}
                 className={`preset-btn ${
