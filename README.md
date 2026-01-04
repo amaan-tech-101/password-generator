@@ -1,16 +1,84 @@
-# React + Vite
+# Password Generator Pro 🔐
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen?style=for-the-badge)](https://password-generator-puce-iota.vercel.app/)
+[![React](https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-7-purple?style=for-the-badge&logo=vite)](https://vitejs.dev/)
+[![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)](LICENSE)
 
-Currently, two official plugins are available:
+> A modern, secure, and beautiful password generator built with React. Generate strong passwords, memorable passphrases, and secure PINs—all 100% client-side.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- 🔒 **Three Generation Modes** - Random passwords, memorable passphrases, and numeric PINs
+- 🎨 **Neumorphic Design** - Beautiful, modern UI with smooth animations
+- 📱 **Fully Responsive** - Works perfectly on all devices (320px to 4K)
+- ⚡ **Instant Generation** - Cryptographically secure, generated in your browser
+- 🔐 **100% Client-Side** - Your passwords never leave your device
+- 📊 **Strength Meter** - Real-time password strength analysis
+- 📜 **Password History** - Quick access to recently generated passwords
+- 🌐 **SEO Optimized** - Meta tags, structured data, and sitemap included
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Live Demo
 
-## Expanding the ESLint configuration
+**[Try it now →](https://password-generator-puce-iota.vercel.app/)**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+| Technology     | Purpose                     |
+| -------------- | --------------------------- |
+| React 19       | UI Framework                |
+| Vite 7         | Build Tool                  |
+| Lucide React   | Icons                       |
+| CSS3           | Styling (Neumorphic design) |
+| Web Crypto API | Secure random generation    |
+
+## 📁 Project Structure
+
+```
+src/
+├── components/          # React components
+│   ├── index.js         # Barrel export
+│   ├── PasswordDisplay.jsx
+│   ├── Options.jsx
+│   ├── ModeTabs.jsx
+│   └── ...
+├── constants/           # Centralized configuration
+│   ├── modes.js         # Generation mode definitions
+│   └── passwordOptions.js
+├── hooks/               # Custom React hooks
+│   └── usePasswordGenerator.js
+├── utils/               # Pure utility functions
+│   ├── generatePassword.js
+│   ├── generateMemorable.js
+│   └── checkStrength.js
+└── App.jsx              # Root component
+```
+
+## 🏃 Run Locally
+
+```bash
+# Clone the repository
+git clone https://github.com/amaan-tech-101/password-generator.git
+
+# Navigate to the project
+cd password-generator
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+## 📄 License
+
+MIT © [Mohammad Amaan](https://x.com/dev_amaan)
+
+---
+
+<p align="center">
+  Built with ❤️ using React & CSS
+</p>
