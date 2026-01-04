@@ -1,6 +1,6 @@
 # Password Generator Pro 🔐
 
-[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen?style=for-the-badge)](https://password-generator-puce-iota.vercel.app/)
+[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen?style=for-the-badge)](https://password--generator.vercel.app/)
 [![React](https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-7-purple?style=for-the-badge&logo=vite)](https://vitejs.dev/)
 [![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)](LICENSE)
@@ -20,7 +20,7 @@
 
 ## 🚀 Live Demo
 
-**[Try it now →](https://password-generator-puce-iota.vercel.app/)**
+**[Try it now →](https://password--generator.vercel.app/)**
 
 ## 🛠️ Tech Stack
 
