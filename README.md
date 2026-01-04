@@ -20,7 +20,7 @@
 
 ## 🚀 Live Demo
 
-**[Try it now →](https://password--generator.vercel.app/)**
+<a href="https://password--generator.vercel.app/" target="_blank"><strong>Try it now →</strong></a>
 
 ## 🛠️ Tech Stack
 
@@ -75,7 +75,7 @@ npm run build
 
 ## 📄 License
 
-MIT © [Mohammad Amaan](https://x.com/dev_amaan)
+MIT © <a href="https://x.com/dev_amaan" target="_blank">Mohammad Amaan</a>
 
 ---
 
